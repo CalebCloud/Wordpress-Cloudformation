@@ -15,9 +15,8 @@ If you need SSH:
 - Replace SSH KEY GOES HERE below with your public SSH key
 - Add the code below to the EC2.yaml Userdata section
 
-#!/bin/bash
-USER1=member
-
+#!/bin/bash  
+USER1=member  
 adduser $USER1 && mkdir /home/$USER1/.ssh && chmod 700 /home/$USER1/.ssh  
 echo "SSH KEY GOES HERE" > /home/$USER1/.ssh/authorized_keys  
 chmod 600 /home/$USER1/.ssh/authorized_keys  
