@@ -18,12 +18,8 @@ If you need SSH:
 #!/bin/bash
 USER1=member
 
-adduser $USER1 && mkdir /home/$USER1/.ssh && chmod 700 /home/$USER1/.ssh
-
-echo "SSH KEY GOES HERE" > /home/$USER1/.ssh/authorized_keys
-
-chmod 600 /home/$USER1/.ssh/authorized_keys
-
-chown -R $USER1:$USER1 /home/$USER1/.ssh
-
-echo "$USER1 ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+adduser $USER1 && mkdir /home/$USER1/.ssh && chmod 700 /home/$USER1/.ssh  
+echo "SSH KEY GOES HERE" > /home/$USER1/.ssh/authorized_keys  
+chmod 600 /home/$USER1/.ssh/authorized_keys  
+chown -R $USER1:$USER1 /home/$USER1/.ssh  
+echo "$USER1 ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers  
