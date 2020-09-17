@@ -14,6 +14,7 @@ Changes to make:
 If you need SSH:
 - Replace SSH KEY GOES HERE below with your public SSH key
 - Add the code below to the EC2.yaml Userdata section
+- Connect with "ssh -i "privateKey" member@EC2IP
 
 #!/bin/bash  
 USER1=member  
