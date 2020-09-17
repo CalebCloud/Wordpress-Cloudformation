@@ -10,3 +10,15 @@ Changes to make:
 - Change initialDomain on Route53.yaml to your Route53 domain
 - Upload RDS/VPC/EC2/Route53 files to S3
 - Change master TemplateURL under each stack to reflect the new S3 URL's
+
+If you need SSH:
+- Replace SSH KEY GOES HERE below with your public SSH key
+- Add the code below to the EC2.yaml Userdata section
+
+#!/bin/bash
+USER1=member
+adduser $USER1 && mkdir /home/$USER1/.ssh && chmod 700 /home/$USER1/.ssh
+echo "SSH KEY GOES HERE" > /home/$USER1/.ssh/authorized_keys
+chmod 600 /home/$USER1/.ssh/authorized_keys
+chown -R $USER1:$USER1 /home/$USER1/.ssh
+echo "$USER1 ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
